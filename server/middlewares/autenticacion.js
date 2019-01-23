@@ -22,7 +22,6 @@ let verificaToken = (req, res, next)=>{
                     }
                 });
             }
-
             req.usuario = decode.usuario;
             next();
 
@@ -38,6 +37,7 @@ let verificaToken = (req, res, next)=>{
 let verificaRol = (req, res, next)=>{
     console.log(`ejecutando verifica rol`)
     let usuario = req.usuario;
+    console.log (usuario)
         let rol = usuario.role
        console.log(` Verifica rol ${usuario.role}` )
         if( rol ==='ADMIN_ROLE' ){
