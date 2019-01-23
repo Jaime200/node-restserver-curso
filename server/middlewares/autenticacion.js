@@ -40,7 +40,8 @@ let verificaRol = (req, res, next)=>{
     console.log (usuario)
         let rol = usuario.role
        console.log(` Verifica rol ${usuario.role}` )
-        if( rol ==='ADMIN_ROLE' ){
+        if( usuario.role ==='ADMIN_ROLE' ){
+            console.log('entro if')
             next();
         }
 
