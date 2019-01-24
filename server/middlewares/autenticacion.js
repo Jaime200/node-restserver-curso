@@ -43,7 +43,7 @@ let verificaRol = (req, res, next)=>{
         if( usuario.role ==='ADMIN_ROLE' ){
             console.log('entro if')
             next();
-            console.log('despues de next')
+            return
         }
 
 
