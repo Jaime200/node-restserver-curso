@@ -12,7 +12,7 @@ let rolesValidos = {
 let verificaToken = (req, res, next)=>{
         console.log(`ejecutando verifica token`)
         let token = req.get('token');
-        
+        console.log('obteniendo token', token)
         jwt.verify(token,process.env.SEED ,(err,decode)=>{
             if(err){
                 return res.status(401).json({

@@ -10,6 +10,7 @@ const app = express()
 
 //Rutas
 app.get('/usuario',[verificaToken],(req, res)=> {
+    console.log('ejecutando usuario')
     /*console.log(req.usuario);
     return res.json({
         usuario: req.usuario,
