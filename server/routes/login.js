@@ -7,7 +7,7 @@ const {OAuth2Client} = require('google-auth-library');
 const client = new OAuth2Client(process.env.CLIENT_ID);
 //-------------------
 const _ = require('underscore');
-const saltRounds = 10;
+const saltRounds = process.env.SALT_ROUNDS;
 //Configuracion app
 const app = express()
 

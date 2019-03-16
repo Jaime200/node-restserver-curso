@@ -18,7 +18,7 @@ app.get('/usuario',[verificaToken],(req, res)=> {
         email: req.usuario.email
     });*/
     let desde = req.query.desde || 0;
-    let limite = req.query.desde || 5;
+    let limite = req.query.limite || 5;
     desde = Number(desde)
     limite = Number(limite)
     Usuario.find({ estado: true }, 'nombre email role estado google img')
@@ -31,7 +31,7 @@ app.get('/usuario',[verificaToken],(req, res)=> {
                         err
                     });
                 }
-    console.log(usuarios);
+    //console.log(usuarios);
                 Usuario.countDocuments({ estado: true }, (err,conteo)=>{            
                             res.json({
                                 ok: true,
@@ -70,6 +70,7 @@ app.post('/usuario',[verificaToken,verificaRol],function (req, res) {
     })
      
   app.put('/usuario/:id', verificaToken, function (req, res) {
+      console.log(req.params.id)
       let id = req.params.id
       let body = _.pick(req.body,['nombre','email','img','role','estado']);
        
